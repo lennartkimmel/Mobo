@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-    
+    var test = "testing this" ;
 });
 // function initMap() {
 //     var location = {lat: 51.9174095, lng: 4.4845196};
