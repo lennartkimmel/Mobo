@@ -1,24 +1,24 @@
 'use strict';
 
-const gulp = require('gulp');
-const browsersync = require("browser-sync");
-const livereload = require('gulp-livereload');
-const clean = require('gulp-clean');
-const imagemin = require('gulp-imagemin');
-const cache = require('gulp-cache');
-const sass = require('gulp-sass');
-const cssmin = require('gulp-cssmin');
-const jshint = require('gulp-jshint');
-const notify = require('gulp-notify');
-const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
+const 	gulp = require('gulp'),
+	  	browsersync = require("browser-sync"),
+	  	livereload = require('gulp-livereload'),
+	  	clean = require('gulp-clean'),
+	  	imagemin = require('gulp-imagemin'),
+	  	cache = require('gulp-cache'),
+	  	sass = require('gulp-sass'),
+	  	cssmin = require('gulp-cssmin'),
+		jshint = require('gulp-jshint'),
+		notify = require('gulp-notify'),
+		rename = require('gulp-rename'),
+		uglify = require('gulp-uglify'),
+		concat = require('gulp-concat');
 
 function browserSync(done) {
 	browsersync.init({
-	  server: {
-		baseDir: "./dist",
-	  },
+		server: {
+			baseDir: "./dist",
+	  	},
 	  	port: 3000
 	});
 	done();
@@ -35,7 +35,7 @@ function cleaning(){
     .pipe(clean());
 }
 
-function runSass() {
+function styles() {
 	return gulp
 		.src('app/scss/main.scss')
 		.pipe(sass()).on('error', sass.logError)
@@ -43,7 +43,7 @@ function runSass() {
 		.pipe(livereload({ start: true }))
 }
 
-function runCssmin(){
+function minifystyles(){
 	return gulp
 		.src('app/css/main.css')
 		.pipe(cssmin())
@@ -90,18 +90,18 @@ function move(done){
     done();
 }
 
-function watchFiles(){
+function watching(){
 	livereload.listen({ basePath: 'dist' })
-	gulp.watch('app/scss/**/*.scss', gulp.series(runSass, runCssmin, reload))
+	gulp.watch('app/scss/**/*.scss', gulp.series(styles, minifystyles, reload))
 	gulp.watch('app/js/*.js', gulp.series(vendor, scripts, reload))
 	gulp.watch('app/*.html', gulp.series(move, reload))
 	gulp.watch('app/img/*.*', gulp.series(images, reload))
 }
 
-const css = gulp.series(runSass, runCssmin);
-const js = gulp.parallel(vendor, scripts);
-const watch = gulp.series(cleaning, watchFiles);
-const defaultTasks = gulp.series(cleaning, runSass, runCssmin, vendor, scripts, images, move, browserSync, watchFiles);
+const 	css = gulp.series(styles, minifystyles),
+		js = gulp.parallel(vendor, scripts),
+		watch = gulp.series(cleaning, watching),
+		defaultTasks = gulp.series(cleaning, styles, minifystyles, vendor, scripts, images, move, browserSync, watching);
 
 exports.css = css;
 exports.js = js;
