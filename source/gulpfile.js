@@ -1,19 +1,24 @@
 'use strict';
 
-const gulp = require('gulp');
-const browsersync = require("browser-sync");
-const livereload = require('gulp-livereload');
-const sass = require('gulp-sass');
-const cssmin = require('gulp-cssmin');
-const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
+const 	gulp = require('gulp'),
+	  	browsersync = require("browser-sync"),
+	  	livereload = require('gulp-livereload'),
+	  	clean = require('gulp-clean'),
+	  	imagemin = require('gulp-imagemin'),
+	  	cache = require('gulp-cache'),
+	  	sass = require('gulp-sass'),
+	  	cssmin = require('gulp-cssmin'),
+		jshint = require('gulp-jshint'),
+		notify = require('gulp-notify'),
+		rename = require('gulp-rename'),
+		uglify = require('gulp-uglify'),
+		concat = require('gulp-concat');
 
 function browserSync(done) {
 	browsersync.init({
-	  server: {
-		baseDir: "./dist",
-	  },
+		server: {
+			baseDir: "./dist",
+	  	},
 	  	port: 3000
 	});
 	done();
@@ -24,7 +29,13 @@ function reload(done) {
 	done();
 }
 
-function runSass() {
+function cleaning(){
+	return gulp
+		.src(['dist/css', 'dist/js', 'dist/img'], {read: false, allowEmpty: true})
+    .pipe(clean());
+}
+
+function styles() {
 	return gulp
 		.src('app/scss/main.scss')
 		.pipe(sass()).on('error', sass.logError)
@@ -32,7 +43,7 @@ function runSass() {
 		.pipe(livereload({ start: true }))
 }
 
-function runCssmin(){
+function minifystyles(){
 	return gulp
 		.src('app/css/main.css')
 		.pipe(cssmin())
@@ -54,6 +65,8 @@ function vendor() {
 function scripts(){
 	return gulp
 		.src('app/js/app.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
 		.pipe(uglify())
 		.pipe(concat('scripts.js'))
 		.pipe(rename({suffix: '.min'}))
@@ -61,30 +74,34 @@ function scripts(){
 		.pipe(livereload({ start: true }))
 }
 
+function images(){
+	return gulp
+		.src('app/img/*.*')
+		.pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+		.pipe(gulp.dest('dist/img'))
+		.pipe(notify({ message: 'Images task complete' }))
+		.pipe(livereload({ start: true }))
+}
+
 function move(done){
-    console.log('Moving all HTML and image files to dist folder');
-    gulp.src('app/img/*.*')
-      .pipe(gulp.dest('dist/img'));
+    console.log('Moving HTML files to dist folder');
     gulp.src('app/*.html')
       .pipe(gulp.dest('dist/'));
-    gulp.src('app/files/*.*')
-      .pipe(gulp.dest('dist/files'));
     done();
 }
 
-function watchFiles(){
+function watching(){
 	livereload.listen({ basePath: 'dist' })
-
-	gulp.watch('app/scss/**/*.scss', gulp.series(runSass, runCssmin, reload))
+	gulp.watch('app/scss/**/*.scss', gulp.series(styles, minifystyles, reload))
 	gulp.watch('app/js/*.js', gulp.series(vendor, scripts, reload))
 	gulp.watch('app/*.html', gulp.series(move, reload))
-	gulp.watch('app/img/*.*', gulp.series(move, reload))
+	gulp.watch('app/img/*.*', gulp.series(images, reload))
 }
 
-const css = gulp.series(runSass, runCssmin);
-const js = gulp.parallel(vendor, scripts);
-const watch = gulp.parallel(watchFiles);
-const defaultTasks = gulp.series(runSass, runCssmin, vendor, scripts, move, browserSync, watch);
+const 	css = gulp.series(styles, minifystyles),
+		js = gulp.parallel(vendor, scripts),
+		watch = gulp.series(cleaning, watching),
+		defaultTasks = gulp.series(cleaning, styles, minifystyles, vendor, scripts, images, move, browserSync, watching);
 
 exports.css = css;
 exports.js = js;
