@@ -84,9 +84,9 @@ function images(){
 }
 
 function move(done){
-    console.log('Moving HTML files to dist folder');
     gulp.src('app/*.html')
-      .pipe(gulp.dest('dist/'));
+	  .pipe(gulp.dest('dist/'))
+	  .pipe(notify({ message: 'Moving HTML files to dist folder' }))
     done();
 }
 
