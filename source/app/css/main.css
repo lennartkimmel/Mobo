@@ -6,7 +6,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i|Palanquin+Dark:600&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -326,7 +325,7 @@ html {
  * Basic typography style for copy text
  */
 body {
-  font: normal 125%/1.4 "Arial", "sans-serif"; }
+  font-family: "Open Sans", sans-serif; }
 
 /**
  * Clear inner floats
@@ -383,6 +382,3 @@ body {
 
 nav {
   background: green; }
-
-h1 {
-  color: #FF0000; }
