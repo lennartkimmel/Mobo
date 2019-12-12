@@ -381,5 +381,8 @@ body {
   position: absolute;
   width: 1px; }
 
+nav {
+  background: green; }
+
 h1 {
   color: #FF0000; }
