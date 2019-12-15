@@ -1,3 +1,39 @@
-// h1{
-//     color: $red;
-// }
+.hover-image{
+    margin-top: 50px;
+    .row{
+        // background-color: #e8e8e8;
+    }
+    .image-section{
+        padding:0;
+        &-container{
+            display: none;
+            img{
+                width: 80%;
+            }
+        }
+    }
+    .image-section-container.active {
+        display: block;
+    }
+    .link-section {
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+        .link-item{
+            padding:10px;
+            width: 300px;
+            margin: 10px 0;
+            transition:all 0.3s ease;
+            border-radius: 5px;
+            a{
+                margin-left: 10px;
+            }
+            &:hover{
+                background-color: #919191;
+                cursor: pointer;
+            }
+        }
+    }
+}
