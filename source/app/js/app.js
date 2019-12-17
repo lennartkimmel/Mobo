@@ -2,11 +2,18 @@
 $( document ).ready(function() {
     var test = "testing this";
 });
-// function initMap() {
-//     var location = {lat: 51.9174095, lng: 4.4845196};
-//     var map = new google.maps.Map(
-//         document.getElementById('map'), {zoom: 15, center: location, disableDefaultUI: true});
-//     var marker = new google.maps.Marker({position: location, map: map});
-// }
+
+function changeImage(number){
+    for(var i=1; i<5; i++){
+        document.getElementById('img-'+i).parentNode.classList.remove("active");
+    }
+    document.getElementById('img-'+number).parentNode.classList.add("active");
+}
+
+function imageCarrousel(){
+    for(var i=1; i<5; i++){
+        document.getElementById('link-'+i).parentNode.classList.remove("active");
+    }
+}
 
 
