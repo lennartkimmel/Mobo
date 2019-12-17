@@ -4,6 +4,16 @@
 body {
   font-family: $font-stack;
 }
+nav {
+  ul{
+      li{
+          a{
+              color: $white;
+              font-size: 26px;
+          }
+      }
+  }
+} 
 h2{
   font-size: 60px;
   font-weight: bold;
@@ -11,3 +21,4 @@ h2{
 p{
   font-size: 26px;
 }
+

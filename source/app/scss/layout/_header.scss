@@ -1,16 +1,22 @@
-nav {
-    background: $black;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
+.navbar-nav {
     flex-direction: row;
 }
+.navbar-brand{
+    margin-left: 50px; 
+    transition: 0.4s;
+}
 
-#logo {
-    a {
-        img {
-            width: 80px;
-            padding: 1px;
+.navigation {
+    background: $black;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    ul{
+        line-height: 1;
+        li{
+            margin-right: 25px;
         }
-    }   
+    }
 }
