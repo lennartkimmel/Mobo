@@ -1,3 +1,16 @@
 nav {
-    background: green;
+    background: $black;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#logo {
+    a {
+        img {
+            width: 80px;
+            padding: 1px;
+        }
+    }   
 }
