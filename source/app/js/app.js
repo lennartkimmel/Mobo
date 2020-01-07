@@ -16,4 +16,16 @@ function imageCarrousel(){
     }
 }
 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementsByClassName("navigation")[0].style.height = "100px";
+    document.getElementsByClassName("brand-image")[0].style.height = "80px";
+  } else {
+    document.getElementsByClassName("navigation")[0].style.height = "140px";
+    document.getElementsByClassName("brand-image")[0].style.height = "100px";
+  }
+}
+
 

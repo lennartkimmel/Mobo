@@ -7616,6 +7616,10 @@ html {
 body {
   font-family: "Open Sans", sans-serif; }
 
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 26px; }
+
 h2 {
   font-size: 40px;
   font-family: "Palanquin Dark", sans-serif;
@@ -7677,16 +7681,24 @@ p {
   position: absolute;
   width: 1px; }
 
-nav {
-  background: #1C1A1B;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
+.navbar-nav {
   flex-direction: row; }
 
-#logo a img {
-  width: 80px;
-  padding: 1px; }
+.navbar-brand {
+  margin-left: 50px;
+  transition: 0.4s; }
+
+.navigation {
+  background: #1C1A1B;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99; }
+  .navigation ul {
+    line-height: 1; }
+    .navigation ul li {
+      margin-right: 25px; }
 
 .hover-image {
   margin-top: 50px; }
