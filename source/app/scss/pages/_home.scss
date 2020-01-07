@@ -21,17 +21,16 @@
             padding: 0;
             margin-top: 40px;
         }
-        .link-item{
-            padding:10px;
+        .link-item {
             width: 300px;
             margin: 10px 0;
             transition:all 0.3s ease;
-            border-radius: 5px;
-            a{
+
+            a {
                 margin-left: 10px;
             }
-            &:hover{
-                background-color: #919191;
+            &:hover {
+                color: $orange;
                 cursor: pointer;
             }
         }
