@@ -1,22 +1,107 @@
-.navbar-nav {
-    flex-direction: row;
-}
-.navbar-brand{
-    margin-left: 50px; 
-    transition: 0.4s;
+.navbar {
+    background: $black;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-.navigation {
-    background: $black;
-    transition: 0.4s;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 99;
-    ul{
-        line-height: 1;
-        li{
-            margin-right: 25px;
+.navbar-brand {
+    img {
+        max-width: 60px;
+    }
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    padding-right: 20px;
+}
+
+.nav-social {
+    padding-left: 20px;
+    border-left: solid 2px $white; 
+
+    a div {
+        border-color: $white;
+
+        &:hover {
+            transition: 0.4s;
+            border-color: $orange !important;
+        }
+
+        i {
+            padding: 12px;
+            color: $white;
+
+            &:hover {
+                transition: 0.4s;
+                color: $orange !important;
+            }
         }
     }
 }
+
+.nav-item {
+    a {
+        color: $white !important;
+        font: 700 18px/1.2em $font-title;
+
+        &:hover {
+            transition: 0.4s;
+            color: $orange !important;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-collapse {
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .collapse {
+        flex-direction: column;
+    }
+
+    ul {
+        padding: 20px 0;
+    }
+
+    .nav-social {
+        padding-left: 0;
+        border-left: none; 
+        flex-direction: row;
+        align-items: flex-start;
+
+        li {
+            padding-right: 20px;
+        }
+    }
+}
+
+// .navbar-nav {
+//     flex-direction: row;
+// }
+// .navbar-brand{
+//     margin-left: 50px; 
+//     transition: 0.4s;
+// }
+
+// .navigation {
+//     background: $black;
+//     transition: 0.4s;
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     z-index: 99;
+//     ul{
+//         line-height: 1;
+//         li{
+//             margin-right: 25px;
+//         }
+//     }
+// }
