@@ -7626,7 +7626,7 @@ h2 {
   font-weight: bold; }
 
 p {
-  font-size: 26px; }
+  font-size: 1rem; }
 
 /**
  * Clear inner floats
@@ -7707,6 +7707,8 @@ p {
   display: block; }
 
 .footer-logo {
+  display: flex;
+  justify-content: flex-start;
   padding: 30px 5px; }
   .footer-logo img {
     height: 80px;
@@ -7717,11 +7719,18 @@ p {
   align-items: center;
   justify-content: flex-end; }
   .social-links ul {
+    padding: 0;
     display: flex;
     flex-direction: row;
     list-style: none; }
     .social-links ul li {
       margin: 10px; }
+
+@media screen and (max-width: 800px) {
+  .social-links {
+    justify-content: center; }
+  .footer-logo {
+    justify-content: center; } }
 
 .social-icon {
   width: 40px;
@@ -7748,6 +7757,53 @@ p {
     font-size: 14px;
     text-align: center; }
 
+#order {
+  margin: 0 auto;
+  padding: 80px 0;
+  color: #FFFFFF;
+  background: linear-gradient(90deg, #1C1A1B 50%, #DF6527); }
+  #order #wpr-content {
+    text-align: center; }
+    #order #wpr-content h2 {
+      font: 700 40px/1.2em "Palanquin Dark", sans-serif; }
+    #order #wpr-content p {
+      padding: 40px 0; }
+    @media screen and (max-width: 800px) {
+      #order #wpr-content h2 {
+        font-size: 26px; }
+      #order #wpr-content p {
+        padding: 20px; } }
+
+@media screen and (max-width: 800px) {
+  #order {
+    padding: 40px 0; } }
+
+#wpr-form {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 20px; }
+  #wpr-form .form-group {
+    display: flex;
+    justify-content: center; }
+    #wpr-form .form-group input {
+      margin: 1px;
+      border-radius: 4px;
+      border: none;
+      color: #1C1A1B;
+      padding: 10px 20px;
+      font: 700 16px/1.2em "Palanquin Dark", sans-serif; }
+      #wpr-form .form-group input::placeholder {
+        color: #c0c2ce; }
+    #wpr-form .form-group .btn {
+      background: #DF6527;
+      border: #DF6527 2px solid;
+      color: #FFFFFF; }
+      #wpr-form .form-group .btn:hover {
+        background: transparent;
+        color: #DF6527; }
+  #wpr-form .form-check {
+    padding: 0 24px 20px; }
+
 .hover-image {
   margin-top: 50px; }
   .hover-image .image-section {
@@ -7771,3 +7827,19 @@ p {
     .hover-image .link-section .link-item:hover {
       color: #DF6527;
       cursor: pointer; }
+
+.btn {
+  padding: 8px 26px;
+  background: transparent;
+  border: #1C1A1B 2px solid;
+  border-radius: 50px;
+  color: #1C1A1B;
+  font: 700 20px/1.2em "Palanquin Dark", sans-serif; }
+  .btn:hover {
+    transition: 0.4s;
+    background: #1C1A1B;
+    color: #FFFFFF; }
+
+.link {
+  background: #1C1A1B;
+  border: #DF6527 2px solid; }
