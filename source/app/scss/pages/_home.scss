@@ -1,3 +1,19 @@
+.introduction{
+    margin-top: 140px;
+    height:800px;
+    .carousel-image{
+        display: block;
+        img{
+            height: 900px;
+            width:900px;
+            margin: -100px auto 0 -200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
+
+
 .hover-image{
     margin-top: 50px;
     .image-section{
