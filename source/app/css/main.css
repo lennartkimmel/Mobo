@@ -7892,6 +7892,12 @@ p {
         color: #DF6527;
         cursor: pointer; }
 
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #1C1A1B; }
+
 .btn {
   background: transparent;
   border: #1C1A1B 2px solid;
