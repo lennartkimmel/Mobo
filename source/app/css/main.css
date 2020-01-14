@@ -7614,19 +7614,17 @@ html {
  * Basic typography style for copy text
  */
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  color: #1C1A1B; }
 
-nav ul li a {
-  color: #FFFFFF;
-  font-size: 26px; }
+h1 {
+  font: 700 50px/1.2 "Palanquin Dark", sans-serif; }
 
 h2 {
-  font-size: 40px;
-  font-family: "Palanquin Dark", sans-serif;
-  font-weight: bold; }
+  font: 700 40px/1.2 "Palanquin Dark", sans-serif; }
 
 p {
-  font-size: 1rem; }
+  font: 300 16px/1.8 "Open Sans", sans-serif; }
 
 /**
  * Clear inner floats
@@ -7853,8 +7851,6 @@ p {
   .introduction .intro-header {
     text-align: right;
     padding: 170px 90px; }
-    .introduction .intro-header h2 {
-      font-size: 50px; }
 
 .hover-image {
   margin-top: 50px; }

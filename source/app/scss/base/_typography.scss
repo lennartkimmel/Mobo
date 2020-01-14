@@ -3,22 +3,14 @@
  */
 body {
   font-family: $font-stack;
+  color: $black;
 }
-nav {
-  ul{
-      li{
-          a{
-              color: $white;
-              font-size: 26px;
-          }
-      }
-  }
-} 
+h1 {
+  font: 700 50px/1.2 $font-title;
+}
 h2{
-  font-size: 40px;
-  font-family: $font-title;
-  font-weight: bold;
+  font: 700 40px/1.2 $font-title;
 }
 p{
-  font-size: 1rem;
+  font: 300 16px/1.8 $font-stack;
 }
