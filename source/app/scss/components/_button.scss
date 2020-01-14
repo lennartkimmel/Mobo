@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .btn {
-    padding: 8px 26px;
+    //padding: 8px 26px;
     background: transparent;
     border: $black 2px solid;
     border-radius: 50px;
@@ -14,6 +14,17 @@
         transition: 0.4s;
         background: $black;
         color: $white;
+    }
+
+    a {
+        padding: 8px 20px;
+        text-decoration: none;
+        color: $black;
+        
+        &:hover {
+          color: $white;
+          text-decoration: none;
+        }
     }
 }
 
@@ -31,4 +42,15 @@
         color: $orange;
         border-color: $orange;
     }  
+
+    a {
+        padding: 8px 20px;
+        text-decoration: none;
+        color: $black;
+        
+        &:hover {
+          color: $orange;
+          text-decoration: none;
+        }
+    }
 }

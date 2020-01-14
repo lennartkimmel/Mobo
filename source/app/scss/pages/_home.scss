@@ -1,6 +1,6 @@
 .introduction{
     //margin-top: 140px;
-    height:800px;
+    //height:800px;
     .carousel-image{
         display: block;
         img{
@@ -22,6 +22,9 @@
     margin-top: 50px;
     .image-section{
         padding:0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
         &-container{
             display: none;
             img{
@@ -33,6 +36,7 @@
         display: block;
     }
     .link-section {
+        padding: 20px 0 60px;
         ul{
             list-style-type: none;
             padding: 0;
