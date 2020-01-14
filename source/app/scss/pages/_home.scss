@@ -1,14 +1,22 @@
 .introduction{
-    margin-top: 140px;
+    //margin-top: 140px;
     height:800px;
     .carousel-image{
         display: block;
         img{
-            height: 900px;
-            width:900px;
+            height: 800px;
+            width: 800px;
             margin: -100px auto 0 -200px;
             object-fit: cover;
             border-radius: 50%;
+        }
+    }
+    .intro-header {
+        text-align: right;
+        padding: 170px 90px;
+
+        h2 {
+            font-size: 50px;;
         }
     }
 }

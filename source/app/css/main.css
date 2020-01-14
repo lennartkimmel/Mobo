@@ -7841,16 +7841,20 @@ p {
     padding: 0 24px 20px; }
 
 .introduction {
-  margin-top: 140px;
   height: 800px; }
   .introduction .carousel-image {
     display: block; }
     .introduction .carousel-image img {
-      height: 900px;
-      width: 900px;
+      height: 800px;
+      width: 800px;
       margin: -100px auto 0 -200px;
       object-fit: cover;
       border-radius: 50%; }
+  .introduction .intro-header {
+    text-align: right;
+    padding: 170px 90px; }
+    .introduction .intro-header h2 {
+      font-size: 50px; }
 
 .hover-image {
   margin-top: 50px; }
@@ -7889,5 +7893,14 @@ p {
     color: #FFFFFF; }
 
 .link {
-  background: #1C1A1B;
-  border: #DF6527 2px solid; }
+  padding: 8px 0;
+  margin: 20px;
+  background: transparent;
+  border: none;
+  border-bottom: #1C1A1B 2px solid;
+  color: #1C1A1B;
+  font: 700 16px/1.2em "Palanquin Dark", sans-serif; }
+  .link:hover {
+    transition: 0.4s;
+    color: #DF6527;
+    border-color: #DF6527; }

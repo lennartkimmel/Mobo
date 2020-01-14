@@ -18,6 +18,17 @@
 }
 
 .link {
-    background: $black;
-    border: $orange 2px solid;   
+    padding: 8px 0;
+    margin: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: $black 2px solid;
+    color: $black;
+    font: 700 16px/1.2em $font-title;
+
+    &:hover {
+        transition: 0.4s;
+        color: $orange;
+        border-color: $orange;
+    }  
 }
