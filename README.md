@@ -7,7 +7,7 @@ Open a terminal window and type the following command to install the Gulp comman
 
 The `package.json`  and the `gulpfile.js` files are already included in this project, so you only need to take the following steps:
 
-1. Open a terminal window at the root of this project.
+1. Open a terminal window at the `source` folder of this project.
 2. Run the following command: `npm install`. This will install the node modules required for the Gulp tasks.
 3. Lastly, run the command `gulp`. A browser window will open with the `index.html` file.
 4. You can now start coding in the `app` directory.
