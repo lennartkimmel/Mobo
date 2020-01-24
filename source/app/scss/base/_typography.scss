@@ -5,12 +5,16 @@ body {
   font-family: $font-stack;
   color: $black;
 }
+
 h1 {
   font: 700 50px/1.2 $font-title;
 }
-h2{
+
+h2 {
   font: 700 40px/1.2 $font-title;
 }
-p{
+
+p {
   font: 300 16px/1.8 $font-stack;
+  padding: 15px 0;
 }

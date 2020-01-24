@@ -49,6 +49,7 @@
     a {
         color: $white !important;
         font: 700 18px/1.2em $font-title;
+        cursor: pointer;
 
         &:hover {
             transition: 0.4s;

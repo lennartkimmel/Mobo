@@ -1,12 +1,18 @@
 #information {
     .info-text {
-
+        padding: 100px 80px 20px;
     }
 
     .info-video {
-
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
     }
 }
+
+
 
 
 #order {
